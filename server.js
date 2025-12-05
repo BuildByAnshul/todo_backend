@@ -35,7 +35,7 @@ app.post('/add', (req, res) => {
 });
 
 app.get('/get',(req,res)=>{
-  TodoModel.find()
+  TodoModel.find().sort({_id:-1})
   .then(result=> res.json(result))
   .catch(err=>console.log(err));
 });
